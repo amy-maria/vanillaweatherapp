@@ -23,6 +23,7 @@
   </head>/
   <body>
 
+    
 
     <div class="container">
       <nav class="navbar navbar-light bg-light justify-content-between">
@@ -43,110 +44,155 @@
             Current Location
           </button>
         </form>
-  
       </nav>
-      
-      <div class="container">
+
+     
+      <div class="row row-cols-1 row-cols-md-2 g-1">
         <div class="row">
           <div class="col-6">
         <h1 id="currentCity">Westerville, OH</h1>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-6">
-        <div class= "currentDate">
-          <p>today</p> </div>
-          <div class="tempnow"> 14 C F </div>
-          <div class="col-6">
-            <div class="currentConditions">
-            <p>cloudy </p>
-            <br />
-        </div>
+        <div class= "currentDate"><p>today</p> </div>
+          <div class="tempnow"> 14 <span class="farenheight">F</span> <span class="celsius">C</span></div>
+        <div class="currentConditions">
+            <p>cloudy </p> </div>
+        
+            <div class="col-6">
         <div class="now-emoji"> <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
              alt=weather-emoji 
-             id=icon
-            />
+             id=icon>
+    
+        <div class= "humidity">Humidity: </div> 
+        <div class= "windspeed">Wind: </div>
+        </br>
             </div>
-      </div>
+            </div>
+            </div>
         </div>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-6">
-        <div class= "humidity">Humidity: </div> 
-          <div class="container">
-            <div class="row">
-              <div class="col-6">
-            <div class= "windspeed">Wind: </div>
+
+
+    <div class="row">
+    <div class="col-12">   
       <h2>Weather Alerts</h2>
-      </div>
+      
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
     <strong>Weather alert!</strong> Text visible for active alert if I can get this to work!
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
-      <div class="col-md-auto
-      <h3>5 Day Forecast</h3>
-      <div class="container text-center">
-        <div class="row">
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Saturday</h5>
-                <h6 class="card-subtitle mb-2 text-muted"></h6>
-                <p class="card-text">15 F/ 6 F</p>
-                <div class="one-emoji">☁️</div>
-                
-                
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Sunday</h5>
-                <h6 class="card-subtitle mb-2 text-muted"></h6>
-                <p class="card-text">15 F/ 2 F</p>
-                <div class="two-emoji">☁️</div>
-            
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Monday</h5>
-                <h6 class="card-subtitle mb-2 text-muted"></h6>
-                <p class="card-text">23 F/ 16 F</p>
-                <div class="three-emoji">☁️</div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Tuesday</h5>
-                <h6 class="card-subtitle mb-2 text-muted"></h6>
-                <p class="card-text">30 F/ 21 F</p>
-                <div class="four-emoji">☁️</div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Wednesday</h5>
-                <h6 class="card-subtitle mb-2 text-muted"></h6>
-                <p class="card-text">42 F/ 36 F</p>
-                <div class="five-emoji">☁️</div>
-              </div>
-            </div>
-          </div>
-        </div>
+    </div>
+    </div>
+
+  
+
+    <div class="row row-cols-1 row-cols-md-5 g-1">
+    
+  <div class="card-group">
+    <div class="col-sm">
+    <div class="card">
+        <div class="one-emoji">
+            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+            class="card-img-top"
+            alt=weather-emoji 
+            id=icon>
+      <div class="card-body">
+        <h5 class="card-title">
+            <div class= dayOne>Saturday</div>
+        </h5>
+        <p class="card-text">
+            <div class= "dayOneHigh">15 <span class="farenheight">F</span><span class="celsius"> C</span></div>
+            <div class= "dayOneLow"> 6 <span class="farenheight">F</span><span class="celsius"> C</span></div>
+        </p>
+       
       </div>
     </div>
+    </div>
+  </div>
+  </div>
+  <div class="col-sm">
+    <div class="card">
+      <div class="one-emoji">
+        <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+        class="card-img-top"
+        alt=weather-emoji 
+        id=icon>
+      <div class="card-body">
+        <h5 class="card-title">
+            <div class= dayTwo>Sunday</div>
+        </h5>
+        <p class="card-text">
+            <div class= "dayTwoHigh">15 <span class="farenheight">F</span><span class="celsius"> C</span></div>
+            <div class= "dayTwoLow"> 6 <span class="farenheight">F</span><span class="celsius"> C</span></div>
+        </p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+    </div>
+  </div>
+    <div class="col-sm">
+    <div class="card">
+        <div class="one-emoji">
+            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+            class="card-img-top"
+            alt=weather-emoji 
+            id=icon>
+            <div class="card-body">
+                <h5 class="card-title">
+                    <div class= dayThree>Monday</div>
+                </h5>
+                <p class="card-text">
+                    <div class= "dayThreeHigh">15 <span class="farenheight">F</span><span class="celsius"> C</span></div>
+                    <div class= "dayThreeLow"> 6 <span class="farenheight">F</span><span class="celsius"> C</span></div>
+                </p>
+               
+              </div>
+      </div>
+    </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+        <div class="one-emoji">
+            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+            class="card-img-top"
+            alt=weather-emoji 
+            id=icon>
+            <div class="card-body">
+                <h5 class="card-title">
+                    <div class= dayFour>Tuesday</div>
+                </h5>
+                <p class="card-text">
+                    <div class= "dayFourHigh">15 <span class="farenheight">F</span><span class="celsius"> C</span></div>
+                    <div class= "dayFourLow"> 6 <span class="farenheight">F</span><span class="celsius"> C</span></div>
+                </p>
+              
+              </div>
+      </div>
+      </div>
+    </div>
+      <div class="col-sm">
+    <div class="card">
+        <div class="one-emoji">
+            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+            class="card-img-top"
+            alt=weather-emoji 
+            id=icon>
+            <div class="card-body">
+                <h5 class="card-title">
+                    <div class= dayFive>Wednesday</div>
+                </h5>
+                <p class="card-text">
+                    <div class= "dayFiveHigh">15 <span class="farenheight">F</span><span class="celsius"> C</span></div>
+                    <div class= "dayFiveLow"> 6 <span class="farenheight">F</span><span class="celsius"> C</span></div>
+                </p>
+              </div>
+    </div>
+  </div>
+  </div>
+  </div>
+    </div>
+  </div>
     <footer>
       <a href="https://github.com/amy-maria/vanillaweatherapp">GitHub Repository</a></p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src= src/index.js></script>
   
   </body>

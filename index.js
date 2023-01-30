@@ -69,6 +69,10 @@ const alerts = [...alertList].map(element => new bootstrap.Alert(element))
   
   document.querySelector(".currentDate").innerHTML = `${cDayWeek} ${cMonth} ${cDay}, ${cYear}  ${ctime}`;
   
+
+
+
+  
   function showWeather(response) {
     console.log(response);
     let temp = Math.round(response.data.temperature.current);
