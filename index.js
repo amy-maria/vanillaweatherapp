@@ -70,33 +70,29 @@ const alerts = [...alertList].map(element => new bootstrap.Alert(element))
   document.querySelector(".currentDate").innerHTML = `${cDayWeek} ${cMonth} ${cDay}, ${cYear}  ${ctime}`;
   
   function displayForecast(response) {
-    console.log(response.data);
+    
+    let forecast = response.data.daily;
+    console.log(forecast);
     let forecastElement = document.querySelector("#forecast");
+
+    
   
     let forecastHTML = `<div class="row">`;
-    let days = [
-        "Sunday",
-        "Monday ",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-      ];
    
-    days.forEach(function (day) {
+    forecast.forEach(function (forecastDay) {
       forecastHTML =
         forecastHTML + 
         `
-      
-        <div class="col">
-                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+        <div class="col">forecastDay.condition.icon
+                <img src= "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png"
                 class="img-top"
                 width="45"
                 alt=weather-emoji 
                 id=icon>
         
-        <div class= forecastDay>${day}
-        <div class= "forecastHigh">15 <span class="farenheight">F</span><span class="celsius"> C</span>
-        <div class= "forecastLow"> 6 <span class="farenheight">F</span><span class="celsius"> C</span>
+        <div class= "forecastDay">${forecastDay.time}
+        <div class= "forecastHigh">${forecastDay.temperature.maximum}<span class="farenheight">F</span><span class="celsius"> C</span>
+        <div class= "forecastLow">${forecastDay.temperature.minimum}<span class="farenheight">F</span><span class="celsius"> C</span>
     
            </div>
            </div>
@@ -132,7 +128,6 @@ axios.get(url).then(displayForecast);
     let temp = Math.round(response.data.temperature.current);
     document.querySelector("#currentCity").innerHTML = `${response.data.city}`;
     document.querySelector(".tempnow").innerHTML = `${temp} F`;
-    document.querySelector(".currentConditions").innerHTML = `${response.data.condition.description}`;
     document.querySelector(".humidity").innerHTML = `Humidity: ${response.data.temperature.humidity}%`;
     document.querySelector(".windspeed").innerHTML = `Wind: ${response.data.wind.speed} mph`;
     let iconElement = document.querySelector("#icon");
