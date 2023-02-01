@@ -69,6 +69,13 @@ const alerts = [...alertList].map(element => new bootstrap.Alert(element))
   
   document.querySelector(".currentDate").innerHTML = `${cDayWeek} ${cMonth} ${cDay}, ${cYear}  ${ctime}`;
   
+  function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let day = date.getDay();
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  
+    return days[day];
+  }
   function displayForecast(response) {
     
     let forecast = response.data.daily;
@@ -79,27 +86,28 @@ const alerts = [...alertList].map(element => new bootstrap.Alert(element))
   
     let forecastHTML = `<div class="row">`;
    
-    forecast.forEach(function (forecastDay) {
+    forecast.forEach(function (forecastDay, index) {
+        if (index < 6) {
       forecastHTML =
         forecastHTML + 
         `
-        <div class="col">forecastDay.condition.icon
+        <div class="col">
                 <img src= "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png"
                 class="img-top"
                 width="45"
                 alt=weather-emoji 
                 id=icon>
         
-        <div class= "forecastDay">${forecastDay.time}
-        <div class= "forecastHigh">${forecastDay.temperature.maximum}<span class="farenheight">F</span><span class="celsius"> C</span>
-        <div class= "forecastLow">${forecastDay.temperature.minimum}<span class="farenheight">F</span><span class="celsius"> C</span>
+        <div class= "forecastDay">${formatDay(forecastDay.time)}
+        <div class= "forecastHigh">${Math.round(forecastDay.temperature.maximum)}<span class="farenheight">F</span><span class="celsius"> C</span>
+        <div class= "forecastLow">${Math.round(forecastDay.temperature.minimum)}<span class="farenheight">F</span><span class="celsius"> C</span>
     
            </div>
            </div>
            </div>
            </div>
-    `;
-    });
+    `;}
+  });
   
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
@@ -107,7 +115,7 @@ const alerts = [...alertList].map(element => new bootstrap.Alert(element))
   }
 
 
-  
+
 
 
   
@@ -171,4 +179,3 @@ axios.get(url).then(displayForecast);
   searchElement.addEventListener("click", getSearchPosition);
   
   searchCity("London");
- 
