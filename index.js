@@ -69,7 +69,8 @@ const alerts = [...alertList].map(element => new bootstrap.Alert(element))
   
   document.querySelector(".currentDate").innerHTML = `${cDayWeek} ${cMonth} ${cDay}, ${cYear}  ${ctime}`;
   
-  function displayForecast() {
+  function displayForecast(response) {
+    console.log(response.data);
     let forecastElement = document.querySelector("#forecast");
   
     let forecastHTML = `<div class="row">`;
@@ -114,7 +115,13 @@ const alerts = [...alertList].map(element => new bootstrap.Alert(element))
 
 
   
+function forecast (coordinates) {
 
+let key = "9f93aofdc8e0492e30c4aetee787abea";
+let url =
+`https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${key}&units=imperial`;
+axios.get(url).then(displayForecast);
+}
 
 
 
@@ -131,6 +138,9 @@ const alerts = [...alertList].map(element => new bootstrap.Alert(element))
     let iconElement = document.querySelector("#icon");
     
     iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
+
+
+  forecast(response.data.coordinates);
     }
 
   
@@ -166,4 +176,4 @@ const alerts = [...alertList].map(element => new bootstrap.Alert(element))
   searchElement.addEventListener("click", getSearchPosition);
   
   searchCity("London");
-  displayForecast();
+ 
