@@ -69,10 +69,57 @@ const alerts = [...alertList].map(element => new bootstrap.Alert(element))
   
   document.querySelector(".currentDate").innerHTML = `${cDayWeek} ${cMonth} ${cDay}, ${cYear}  ${ctime}`;
   
-
+  function displayForecast() {
+    let forecastElement = document.querySelector("#forecast");
+  
+    let forecastHTML = `<div class="row">`;
+    let days = [
+        "Sunday",
+        "Monday ",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+      ];
+   
+    days.forEach(function (day) {
+      forecastHTML =
+        forecastHTML + 
+        `
+      
+        <div class="col">
+                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
+                class="img-top"
+                width="45"
+                alt=weather-emoji 
+                id=icon>
+        
+        <div class= forecastDay>${day}
+        <div class= "forecastHigh">15 <span class="farenheight">F</span><span class="celsius"> C</span>
+        <div class= "forecastLow"> 6 <span class="farenheight">F</span><span class="celsius"> C</span>
+    
+           </div>
+           </div>
+           </div>
+           </div>
+    `;
+    });
+  
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+    console.log(forecastHTML);
+  }
 
 
   
+
+
+  
+
+
+
+
+
+
   function showWeather(response) {
     console.log(response);
     let temp = Math.round(response.data.temperature.current);
@@ -119,3 +166,4 @@ const alerts = [...alertList].map(element => new bootstrap.Alert(element))
   searchElement.addEventListener("click", getSearchPosition);
   
   searchCity("London");
+  displayForecast();
