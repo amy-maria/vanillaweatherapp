@@ -98,13 +98,11 @@ const alerts = [...alertList].map(element => new bootstrap.Alert(element))
                 alt=weather-emoji 
                 id=icon>
         
-        <div class= "forecastDay">${formatDay(forecastDay.time)}
-        <div class= "forecastHigh">${Math.round(forecastDay.temperature.maximum)}<span class="farenheight">F</span><span class="celsius"> C</span>
-        <div class= "forecastLow">${Math.round(forecastDay.temperature.minimum)}<span class="farenheight">F</span><span class="celsius"> C</span>
+        <div class= "forecastDay">${formatDay(forecastDay.time)}</div>
+        <div class= "forecastHigh">${Math.round(forecastDay.temperature.maximum)} F</div>
+        <div class= "forecastLow">${Math.round(forecastDay.temperature.minimum)} F</div>
     
-           </div>
-           </div>
-           </div>
+        
            </div>
     `;}
   });

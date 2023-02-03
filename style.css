@@ -1,11 +1,30 @@
+:root {
+    color-scheme: dark light;
+}
 body {
     font-family: sans-serif;
 
   }
 
-  footer {
-    text-align: center;
-    padding: 4px;
-    background-color: white;
-    color: blue;
+footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color:blue;
+        text-align: center;
+      }
+  
+  .currentDate {
+    word-wrap: none;
+
   }
+  .weather-forecast {
+    display: flexbox;
+    outline-style:auto;
+    padding: 2%;
+  }
+  .now-emoji {
+    size: auto;
+  }
+  
