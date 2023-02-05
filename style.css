@@ -1,8 +1,7 @@
-:root {
-    color-scheme: dark light;
-}
+
 body {
-    font-family: sans-serif;
+    font-family: 'Red Hat Mono', monospace;
+    background-color: aliceblue;
 
   }
 
@@ -13,18 +12,36 @@ footer {
         width: 100%;
         color:blue;
         text-align: center;
-      }
-  
+}
+
+  .tempnow{
+    font-size: 42px;
+  }
+  .currentConditions {
+    font-size: 28px;
+
+  }
+
+  .humidity {
+    font-size: 21px;
+    text-align: left;
+  }
+  .windspeed {
+    font-size: 21px;
+text-align: left;
+  }
   .currentDate {
     word-wrap: none;
 
   }
   .weather-forecast {
-    display: flexbox;
-    outline-style:auto;
+    font-size: 21 px;
+    display: -ms-flexbox;
+    outline-style: auto;
+    text-align: center;
     padding: 2%;
   }
   .now-emoji {
-    size: auto;
+    text-align: left;
   }
   

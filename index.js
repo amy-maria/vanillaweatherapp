@@ -87,7 +87,7 @@ const alerts = [...alertList].map(element => new bootstrap.Alert(element))
     let forecastHTML = `<div class="row">`;
    
     forecast.forEach(function (forecastDay, index) {
-        if (index < 6) {
+        if (index < 5) {
       forecastHTML =
         forecastHTML + 
         `
@@ -99,8 +99,8 @@ const alerts = [...alertList].map(element => new bootstrap.Alert(element))
                 id=icon>
         
         <div class= "forecastDay">${formatDay(forecastDay.time)}</div>
-        <div class= "forecastHigh">${Math.round(forecastDay.temperature.maximum)} F</div>
-        <div class= "forecastLow">${Math.round(forecastDay.temperature.minimum)} F</div>
+        <div class= "forecastHigh">${Math.round(forecastDay.temperature.maximum)} °F</div>
+        <div class= "forecastLow">${Math.round(forecastDay.temperature.minimum)} °F</div>
     
         
            </div>
@@ -133,7 +133,7 @@ axios.get(url).then(displayForecast);
     console.log(response);
     let temp = Math.round(response.data.temperature.current);
     document.querySelector("#currentCity").innerHTML = `${response.data.city}`;
-    document.querySelector(".tempnow").innerHTML = `${temp} F`;
+    document.querySelector(".tempnow").innerHTML = `${temp} °F`;
     document.querySelector(".humidity").innerHTML = `Humidity: ${response.data.temperature.humidity}%`;
     document.querySelector(".windspeed").innerHTML = `Wind: ${response.data.wind.speed} mph`;
     let iconElement = document.querySelector("#icon");
