@@ -132,10 +132,11 @@ axios.get(url).then(displayForecast);
   function showWeather(response) {
     console.log(response);
     let temp = Math.round(response.data.temperature.current);
+    let wind = Math.round(response.data.wind.speed);
     document.querySelector("#currentCity").innerHTML = `${response.data.city}`;
     document.querySelector(".tempnow").innerHTML = `${temp} °F`;
     document.querySelector(".humidity").innerHTML = `Humidity: ${response.data.temperature.humidity}%`;
-    document.querySelector(".windspeed").innerHTML = `Wind: ${response.data.wind.speed} mph`;
+    document.querySelector(".windspeed").innerHTML = `Wind: ${wind} mph`;
     let iconElement = document.querySelector("#icon");
     
     iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
