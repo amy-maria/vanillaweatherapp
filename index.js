@@ -92,7 +92,7 @@ const alerts = [...alertList].map(element => new bootstrap.Alert(element))
         forecastHTML + 
         `
         <div class="col">
-                <img src= "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png"
+                <img src= "https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${forecastDay.condition.icon}.png"
                 class="img-top"
                 width="45"
                 alt=weather-emoji 
@@ -139,7 +139,7 @@ axios.get(url).then(displayForecast);
     document.querySelector(".windspeed").innerHTML = `Wind: ${wind} mph`;
     let iconElement = document.querySelector("#icon");
     
-    iconElement.setAttribute("src", `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
+    iconElement.setAttribute("src", `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
 
 
   forecast(response.data.coordinates);
